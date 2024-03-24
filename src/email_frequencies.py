@@ -16,7 +16,7 @@ def count_emails_by_domain(server, port, username, password, batch_size):
     click.echo(f"{port}")
     # Connect to IMAP server
     try:
-        mail = imaplib.IMAP4_SSL(server, port=993)
+        mail = imaplib.IMAP4_SSL(server, port=port)
         mail.login(username, password)
     except imaplib.IMAP4.error as e:
         click.echo(f"Failed to connect: {e}")
